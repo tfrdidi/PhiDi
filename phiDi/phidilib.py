@@ -1,4 +1,3 @@
-import sys, time
 from mechanize import Browser
 from bs4 import BeautifulSoup
 

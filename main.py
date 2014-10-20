@@ -1,4 +1,8 @@
 from flask import Flask
+# import sys
+# sys.path.insert(0, 'lib')
+from phiDi import phidi
+
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
@@ -20,6 +24,10 @@ def hidden():
 def greeting(userName):
     """interpret input parameter."""
     return 'Hello: %s' % userName
+
+@app.route('/phidi/<articleName>')
+def callPhidi(articleName):
+    return 'Distance of '+ articleName + ": " + str(phidi.getDistanceTo(articleName))
 
 @app.errorhandler(404)
 def page_not_found(e):

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import sys, phidilib
+import phidilib
 
 
 baseURI = "https://de.wikipedia.org"
