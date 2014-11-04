@@ -1,6 +1,4 @@
 from flask import Flask
-# import sys
-# sys.path.insert(0, 'lib')
 from phiDi import phidi
 
 app = Flask(__name__)
@@ -28,6 +26,14 @@ def greeting(userName):
 @app.route('/phidi/<articleName>')
 def callPhidi(articleName):
     return 'Distance of '+ articleName + ": " + str(phidi.getDistanceTo(articleName))
+
+@app.route('/test')
+def callTestFile():
+	f = open ("test", "w")
+	f.write("Upsala")
+	f.close()
+	f = open ("test", "r")
+	return f.readline()
 
 @app.errorhandler(404)
 def page_not_found(e):
