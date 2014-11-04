@@ -27,14 +27,6 @@ def greeting(userName):
 def callPhidi(articleName):
     return 'Distance of '+ articleName + ": " + str(phidi.getDistanceTo(articleName))
 
-@app.route('/test')
-def callTestFile():
-	f = open ("test", "w")
-	f.write("Upsala")
-	f.close()
-	f = open ("test", "r")
-	return f.readline()
-
 @app.errorhandler(404)
 def page_not_found(e):
     """Return a custom 404 error."""

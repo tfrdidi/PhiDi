@@ -29,10 +29,3 @@ def getDistanceTo(articleName):
 def hello():
     """Return a friendly HTTP greeting."""
     return 'Hello World!'
-
-def testFileAccess():
-	f = open ("test", w)
-	f.write("Upsala")
-	f.close
-	f = open ("test", r)
-	return f.readline()
