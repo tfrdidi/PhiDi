@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import phidilib
-import os.path
 
 
 baseURI = "https://de.wikipedia.org"
@@ -30,8 +29,3 @@ def getDistanceTo(articleName):
 def hello():
     """Return a friendly HTTP greeting."""
     return 'Hello World!'
-
-
-def showPhilosophersPage():
-	page = open(os.path.dirname(__file__) + "/pages/philosophers.html")
-	return page.read()

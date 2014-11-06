@@ -1,5 +1,6 @@
 from flask import Flask
 from phiDi import phidi
+from phiDi import loadPage
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
@@ -27,13 +28,9 @@ def greeting(userName):
 def callPhidi(articleName):
     return 'Distance of '+ articleName + ": " + str(phidi.getDistanceTo(articleName))
 
-@app.route('/phiditest')
-def callPhidi():
-    return 'Distance of '+ articleName + ": " + str(phidi.getSampleDistance())
-
 @app.route('/picture')
 def showPicture():
-    result = phidi.getSampleDistance()
+    result = loadPage.showPhilosophersPage()
     return result
 
 @app.errorhandler(404)
