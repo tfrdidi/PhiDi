@@ -8,7 +8,7 @@ target = "Philosophie"
 maxDistance = 20
 
 
-
+# sample method to demonstrate the phidi functionality
 def getSampleDistance():
 	return getDistanceTo("Mallorca")
 	
