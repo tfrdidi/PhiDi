@@ -29,7 +29,8 @@ def callPhidi(articleName):
 
 @app.route('/picture')
 def showPicture():
-    return phidi.showPhilosophersPage()
+    result = phidi.getSampleDistance()
+    return result
 
 @app.errorhandler(404)
 def page_not_found(e):
