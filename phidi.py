@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import phidilib
+import os.path
 
 
 baseURI = "https://de.wikipedia.org"
@@ -34,5 +35,5 @@ def showPhilosophersPicture():
 	return "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Greek_philosopher_busts.jpg/350px-Greek_philosopher_busts.jpg\" alt=\"Philosophen\">"
 
 def showPhilosophersPage():
-	page = open("pages/philosophers.html", "r")
+	page = open(os.path.dirname(__file__) + "/pages/philosophers.html")
 	return page.read()

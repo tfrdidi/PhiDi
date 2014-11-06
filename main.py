@@ -27,13 +27,14 @@ def greeting(userName):
 def callPhidi(articleName):
     return 'Distance of '+ articleName + ": " + str(phidi.getDistanceTo(articleName))
 
-@app.route('/phidi')
+@app.route('/phiditest')
 def callPhidi():
     return 'Distance of '+ articleName + ": " + str(phidi.getSampleDistance())
 
 @app.route('/picture')
 def showPicture():
-    return open("pages/philosophers.html", "r")
+    result = phidi.getSampleDistance()
+    return result
 
 @app.errorhandler(404)
 def page_not_found(e):
