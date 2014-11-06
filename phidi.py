@@ -29,3 +29,6 @@ def getDistanceTo(articleName):
 def hello():
     """Return a friendly HTTP greeting."""
     return 'Hello World!'
+
+def showPhilosophersPicture():
+	return "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Greek_philosopher_busts.jpg/350px-Greek_philosopher_busts.jpg\" alt=\"Philosophen\">"

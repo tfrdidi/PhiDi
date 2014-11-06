@@ -21,10 +21,11 @@ def hidden():
 @app.route('/greeting/<userName>')
 def greeting(userName):
     """interpret input parameter."""
-    return 'Hello: %s' % userName
+    print 'Hello: %s' % userName
 
 @app.route('/phidi/<articleName>')
 def callPhidi(articleName):
+	print phidi.showPhilosophersPicture();
     return 'Distance of '+ articleName + ": " + str(phidi.getDistanceTo(articleName))
 
 @app.errorhandler(404)
