@@ -25,7 +25,7 @@ def greeting(userName):
 
 @app.route('/phidi/<articleName>')
 def callPhidi(articleName):
-	print phidi.showPhilosophersPicture();
+	print phidi.showPhilosophersPicture()
     return 'Distance of '+ articleName + ": " + str(phidi.getDistanceTo(articleName))
 
 @app.errorhandler(404)
