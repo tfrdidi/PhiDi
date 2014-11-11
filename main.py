@@ -20,8 +20,12 @@ class MainPage(webapp2.RequestHandler):
 class PhidiHandler(webapp2.RequestHandler):
 
     def get(self):
-        articleName = self.request.get(querryName)
+        
         self.response.headers["Content-Type"] = "text/plain"
+        
+        articleName = self.request.get(querryName)
+        # replace whitespaces to get a valid url
+        articleName.replace(" ", "_")
         self.response.out.write('Distance of '+ articleName + ": " + str(phidi.getDistanceTo(articleName)))
 
 
