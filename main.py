@@ -24,7 +24,7 @@ def greeting(userName):
     """interpret input parameter."""
     return 'Hello: %s' % userName
 
-@app.route('/phidi/<articleName>')
+@app.route('/phidi?<articleName>')
 def callPhidi(articleName):
     return 'Distance of '+ articleName + ": " + str(phidi.getDistanceTo(articleName))
 
