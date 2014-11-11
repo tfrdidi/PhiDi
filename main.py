@@ -3,13 +3,11 @@ from phiDi import loadPage
 
 import webapp2
 
-import os.path
-
 
 class MainPage(webapp2.RequestHandler):
 
-  def get(self):  # pylint:disable-msg=invalid-name
-    return open(os.path.dirname(__file__) + "/pages/philosophers.html")
+  def get(self): 
+    return loadPage.showPhilosophersPage()
 
 
 class PhidiHandler(webapp2.RequestHandler):
