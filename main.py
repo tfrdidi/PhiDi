@@ -27,8 +27,9 @@ class PhidiHandler(webapp2.RequestHandler):
         articleName = self.request.get(urllib.unquote(querryName))
         # replace whitespaces to get a valid url
         articleName = articleName.replace(" ", "_")
-        #self.response.out.write('Distance of '+ articleName + ": " + str(phidi.getDistanceTo(articleName)))
-        self.response.out.write(urllib.unquote(articleName).decode("iso8859-15"))
+        articleName = urllib.unquote(articleName).decode("iso8859-15")
+        self.response.out.write('Distance of '+ articleName + ": " + str(phidi.getDistanceTo(articleName)))
+        #self.response.out.write(urllib.unquote(articleName).decode("iso8859-15"))
 
 
 app = webapp2.WSGIApplication([('/', MainPage), ('/phidi', PhidiHandler)], debug=True)
