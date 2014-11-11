@@ -3,6 +3,7 @@ from phiDi import loadPage
 
 import webapp2
 
+querryName = "q"
 
 class MainPage(webapp2.RequestHandler):
 
@@ -10,7 +11,7 @@ class MainPage(webapp2.RequestHandler):
     self.response.headers["Content-Type"] = "text/html"
     self.response.out.write("""
         <form action="/phidi">
-            <input type="text"name="test">
+            <input type="text"name="q">
             <input type="submit">
         </form>
         """)
@@ -19,7 +20,7 @@ class MainPage(webapp2.RequestHandler):
 class PhidiHandler(webapp2.RequestHandler):
 
     def get(self):
-        q = self.request.get("q")
+        q = self.request.get(querryName)
         self.response.headers["Content-Type"] = "text/plain"
         self.response.out.write("your input was: " + q)
 
