@@ -7,7 +7,13 @@ import webapp2
 class MainPage(webapp2.RequestHandler):
 
   def get(self): 
-    return loadPage.showPhilosophersPage()
+    self.response.headers["Content-Type"] = "text/html"
+    self.response.out.write("""
+        <form action="/phidi">
+            <input type="text"name="test">
+            <input type="submit">
+        </form>
+        """)
 
 
 class PhidiHandler(webapp2.RequestHandler):
