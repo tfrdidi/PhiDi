@@ -20,8 +20,9 @@ class PhidiHandler(webapp2.RequestHandler):
 
     def get(self):
         q = self.request.get("q")
+        self.response.headers["Content-Type"] = "text/plain"
         self.response.out.write("your input was: " + q)
 
 
-app = webapp2.WSGIApplication([('/.*', MainPage), ('/phidi', PhidiHandler)], debug=True)
+app = webapp2.WSGIApplication([('/', MainPage), ('/phidi', PhidiHandler)], debug=True)
 
