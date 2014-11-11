@@ -1,5 +1,6 @@
 from phiDi import phidi
 from phiDi import loadPage
+import urllib
 
 import webapp2
 
@@ -23,7 +24,7 @@ class PhidiHandler(webapp2.RequestHandler):
         
         self.response.headers["Content-Type"] = "text/plain"
         
-        articleName = self.request.get(querryName)
+        articleName = self.request.get(urllib.unquote(querryName))
         # replace whitespaces to get a valid url
         articleName = articleName.replace(" ", "_")
         #self.response.out.write('Distance of '+ articleName + ": " + str(phidi.getDistanceTo(articleName)))

@@ -44,7 +44,7 @@ def checkParagraph(paragraph):
 def getForwardingLink(uri):
 	response = mech.open(uri)
 
-	soup = BeautifulSoup(response, from_encoding="utf8")
+	soup = BeautifulSoup(response)
 
 	contentResultSet = soup.find_all("div", id="mw-content-text")[0].findChildren(recursive=False)
 
