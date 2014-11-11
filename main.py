@@ -10,7 +10,7 @@ import webapp2
 # the App Engine WSGI application server.
 
 
-class MainHandler(webapp2.RequestHandler):
+class MainPage(webapp2.RequestHandler):
 
   def get(self):  # pylint:disable-msg=invalid-name
     """Handle GET requests."""
@@ -18,5 +18,12 @@ class MainHandler(webapp2.RequestHandler):
     self.response.out.write("Hello world")
 
 
-APP = webapp2.WSGIApplication([('/.*', MainHandler),], debug=True)
+class PhidiHandler(webapp2.RequestHandler):
+
+    def get(self):
+        q = self.request.get("q")
+        self.response.out.write("your input was: " + q)
+
+
+app = webapp2.WSGIApplication([('/.*', MainHandler), ('/phidi', PhidiHandler)], debug=True)
 
