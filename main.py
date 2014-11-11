@@ -3,6 +3,8 @@ from phiDi import loadPage
 
 import webapp2
 
+import os.path
+
 
 class MainPage(webapp2.RequestHandler):
 
