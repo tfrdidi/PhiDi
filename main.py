@@ -20,9 +20,9 @@ class MainPage(webapp2.RequestHandler):
 class PhidiHandler(webapp2.RequestHandler):
 
     def get(self):
-        q = self.request.get(querryName)
+        articleName = self.request.get(querryName)
         self.response.headers["Content-Type"] = "text/plain"
-        self.response.out.write("your input was: " + q)
+        self.response.out.write('Distance of '+ articleName + ": " + str(phidi.getDistanceTo(articleName)))
 
 
 app = webapp2.WSGIApplication([('/', MainPage), ('/phidi', PhidiHandler)], debug=True)
