@@ -1,7 +1,6 @@
 from mechanize import Browser
 from bs4 import BeautifulSoup
 
-BeautifulSoup(web, from_encoding="utf8")
 linkSearchPrefix = "href="
 validTagsFirstParagraph = ["b", "a", "i", "li"]
 mech = Browser()
@@ -45,7 +44,7 @@ def checkParagraph(paragraph):
 def getForwardingLink(uri):
 	response = mech.open(uri)
 
-	soup = BeautifulSoup(response)
+	soup = BeautifulSoup(response, from_encoding="utf8")
 
 	contentResultSet = soup.find_all("div", id="mw-content-text")[0].findChildren(recursive=False)
 
