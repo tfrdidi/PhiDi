@@ -1,6 +1,7 @@
 from mechanize import Browser
 from bs4 import BeautifulSoup
 
+BeautifulSoup(web, from_encoding="utf8")
 linkSearchPrefix = "href="
 validTagsFirstParagraph = ["b", "a", "i", "li"]
 mech = Browser()

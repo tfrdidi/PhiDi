@@ -22,7 +22,7 @@ def getDistanceTo(articleName):
 		if(subPath == wikiSuffix + target):
 			targetNotReached = False
 		else:
-			subPath = phidilib.getForwardingLink(baseURI + str(subPath))
+			subPath = phidilib.getForwardingLink(baseURI + subPath)
 		distance += 1
 	return distance
 
