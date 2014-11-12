@@ -1,3 +1,4 @@
+#coding: utf-8
 from phiDi import phidi
 from phiDi import loadPage
 import urllib
@@ -28,8 +29,8 @@ class PhidiHandler(webapp2.RequestHandler):
         # replace whitespaces to get a valid url
         articleName = articleName.replace(" ", "_")
         articleName = urllib.unquote(articleName).decode("iso8859-15")
-        self.response.out.write('Distance of '+ articleName + ": " + str(phidi.getDistanceTo(articleName)))
-        #self.response.out.write(urllib.unquote(articleName).decode("iso8859-15"))
+        #self.response.out.write('Distance of '+ articleName + ": " + str(phidi.getDistanceTo(articleName)))
+        self.response.out.write(articleName)
 
 
 app = webapp2.WSGIApplication([('/', MainPage), ('/phidi', PhidiHandler)], debug=True)
